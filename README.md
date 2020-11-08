@@ -5,8 +5,9 @@
 Quickly start by cloning the repository to your local machine
 
 ```
-$ git clone https://github.com/Excellent1212/Booking-System-React.git
+$ git clone https://github.com/Panupat305/calculator.git
 ```
+
 
 Install [`npm`](https://www.npmjs.com/get-npm). `npm` is installed and comes bundled with [Node.js](https://nodejs.org/en/download/package-manager/)
 
