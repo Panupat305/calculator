@@ -1,0 +1,59 @@
+.cal-app {
+margin: 0 auto;
+margin-top: 40px;
+width:  260px;
+text-align: center;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(40px, auto);
+}
+
+.textdetail {
+  height: 20px;
+  width: 250px;
+  text-align: right;
+  border-bottom: hidden;
+}
+
+.textinput {
+  height: 40px;
+  width: 250px;
+  text-align: right;
+  font-size: 40px;
+  border-top: hidden;
+}
+input[type=text]:focus {
+  outline: none;
+}
+
+button {
+  background: rgb(226, 226, 226);
+  margin-top: 4px;
+  margin-left: 4px;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+}
+
+button:hover {
+background: rgb(188, 188, 189);
+border: none;
+}
+
+.btn-sum {
+  background: rgb(81, 181, 248);
+}
+
+.btn-sum:hover {
+  background: rgb(68, 152, 207);
+}
+
+
+
+#clear {
+  grid-column: 1/5;
+  grid-row: 1;
+}
