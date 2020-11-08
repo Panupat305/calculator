@@ -9,25 +9,32 @@ function App() {
   useEffect(() => inputRef.current.focus());
 
   function handleClick(e){
- // const operator = ["+", "-", "*", "/"]
+  const operator = ["+", "-", "*", "/"];
   var text = e.target.name;
-
   console.log(text);
-  console.log("result-1 "+result.substr(-1));
-  console.log("result "+result);
-
-
-  if(result.substr(-1) == "+" || result.substr(-1) == "-"  || result.substr(-1) == "*"  || result.substr(-1) == "/"){
-    if(text == "+" || text == "-"|| text == "*"|| text == "/"){
-      text = "";
-    }
-    else{
+ 
+    if (operator.includes(result.substr(-1))) {
+        if(operator.includes(text)){
+          text = "";
+        }
+        else{
+          setResult(result.concat(e.target.name));
+        }
+    }else{
       setResult(result.concat(e.target.name));
     }
-  }
-  else{
-    setResult(result.concat(e.target.name));
-  }
+
+  // if(result.substr(-1) == "+" || result.substr(-1) == "-"  || result.substr(-1) == "*"  || result.substr(-1) == "/"){
+  //   if(text == "+" || text == "-"|| text == "*"|| text == "/"){
+  //     text = "";
+  //   }
+  //   else{
+  //     setResult(result.concat(e.target.name));
+  //   }
+  // }
+  // else{
+  //   setResult(result.concat(e.target.name));
+  // }
     
   }
   function clear(){
@@ -35,15 +42,18 @@ function App() {
     setDetail("");
   }
   function calculate(){
-    
+    var num = (result).toString().replace(/[^-()\d/*+.]/g, '');
+    console.log("num >>> "+num);
+    console.log("calculate >>> "+(result).toString());
     try{
-      setResult(eval(result).toString());
+      setResult(eval(num));
+      //setResult(eval(result).toString());
       setDetail((result).toString()+" =");
     }catch (error){
       setResult("Error")
     }
   }
-
+  
   return (
     <div className="cal-app">
       <from>
